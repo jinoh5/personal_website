@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +14,22 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Minho Kim</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="teaching.html" class="nav-link">Teaching</a></li>
-                </ul>
-            </nav>
+        <div class="container nav-container">
+          <a href="index.html" class="logo">Minho Kim</a>
+          <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+                <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+            </ul>
+          </nav>
         </div>
-    </header>
-
+      </header>
+      
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
@@ -40,91 +44,99 @@
                             <a href="mailto:minho@berkeley.edu" class="social-icon" title="Email">
                                 <i class="fas fa-envelope"></i>
                             </a>
-                            <a href="#" class="social-icon" title="Google Scholar">
+                            <a href="https://scholar.google.com/citations?user=VRVL4TYAAAAJ&hl=en" class="social-icon" title="Google Scholar">
                                 <i class="fas fa-graduation-cap"></i>
                             </a>
-                            <a href="#" class="social-icon" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/minhokim93/" class="social-icon" title="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="social-icon" title="ResearchGate">
+                            <a href="https://www.researchgate.net/profile/Minho_Kim21" class="social-icon" title="ResearchGate">
                                 <i class="fab fa-researchgate"></i>
                             </a>
                             <a href="#" class="social-icon" title="ORCID">
                                 <i class="fab fa-orcid"></i>
                             </a>
                         </div>
+                        <!-- <a href="research.html" class="cta-button">Explore My Research</a>  -->
+                        <!-- <a href="resources/cv_recent.pdf" class="cta-button">CV</a> -->
                     </div>
                     <div class="hero-right">
                         <div class="typewriter-container">
-                            <h1 class="hero-name">
-                                <span id="typewriter" class="typewriter"></span>
+                            <h1 class="hero-name" style="color:black;">
+                                Minho Kim <span id="typewriter" class="typewriter"></span>                                               
                             </h1>
                         </div>
-                        <p class="hero-subtitle">PhD Candidate in Environmental Planning</p>
+                        <!-- <p class="hero-subsubtitle">PhD Candidate in Environmental Planning</p> -->
                         <p class="hero-description">
-                            I'm a PhD candidate at UC Berkeley's Environmental Planning program, using GeoAI and machine learning 
-                            to model natural hazards and predict risks for environmental planning and management of complex urban 
-                            and natural systems. My work bridges computer vision, deep learning, and network data science to address 
-                            critical environmental challenges.
+                        
+                            I’m a <span class="hand-underline">PhD candidate</span> in Environmental Planning at <b>UC Berkeley</b> advised by <a href="https://scholar.google.com/citations?user=YAGjro8AAAAJ&hl=en">Marta C. Gonzalez</a> and <a href="https://ced.berkeley.edu/people/john-radke">John Radke</a>.
+                            Currently, I am interested in using GeoAI (computer vision, deep learning, network data science) to model natural hazards and predict 
+                            risks for environmental planning and management of complex urban and natural systems.
+                            I received my BS and MS degrees in Civil and Environmental Engineering at <b>Seoul National University</b>, 
+                            where I was fortunate to be advised by Professor <a href="https://www.researchgate.net/profile/Yongil-Kim-2">Yongil Kim</a> and was part of the <a href="https://spins.snu.ac.kr">SPINS Lab</a> reserach group. 
+                            <br><br>
+                            Read more <a href="about.html">About Me</a> and my <a href="resources/cv_recent.pdf">CV</a>.
+                            <!-- For my master’s thesis, I researched local climate zone classification using multispectral satellite images via multi-scale convolutional neural networks. 
+                            For my bachelor’s thesis, I used DInSAR on Sentinel-1 images to detect North Korea’s nuclear test site. -->                            
                         </p>
-                        <a href="research.html" class="cta-button">Explore My Research</a>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
-
-            <!-- Research Interests - Compact -->
-            <div class="content-card">
-                <h2 class="section-title">Research Interests</h2>
-                <div class="research-interests">
-                    <div class="research-item" onclick="window.location.href='research.html'">
-                        <div class="research-icon">🏙️</div>
-                        <div class="research-title">Urban & Environmental Planning</div>
-                        <div class="research-dropdown">
-                            <p>Sustainable development and smart city solutions using advanced geospatial technologies and AI-driven approaches.</p>
-                        </div>
-                    </div>
-                    <div class="research-item" onclick="window.location.href='research.html'">
-                        <div class="research-icon">⚠️</div>
-                        <div class="research-title">Natural Hazards</div>
-                        <div class="research-dropdown">
-                            <p>Risk assessment and disaster management through predictive modeling and machine learning techniques.</p>
-                        </div>
-                    </div>
-                    <div class="research-item" onclick="window.location.href='research.html'">
-                        <div class="research-icon">🤖</div>
-                        <div class="research-title">GeoAI & ML/DL</div>
-                        <div class="research-dropdown">
-                            <p>Computer vision and deep learning applications for geospatial analysis and environmental monitoring.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+              
             <!-- Recent News -->
             <div class="content-card">
                 <h2 class="section-title">Recent News</h2>
-                
-                <div class="news-item">
-                    <div class="news-date">June 2025</div>
-                    <div class="news-title">Presenting at International Conference on Urban Planning</div>
-                </div>
+                              
+                <div class="scrollable-news">
 
-                <div class="news-item">
-                    <div class="news-date">May 2025</div>
-                    <div class="news-title">New paper accepted on GeoAI applications in natural hazard modeling</div>
-                </div>
+                    <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                      <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                      <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                      <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                      <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                      <div class="news-item">
+                        <div class="news-entry">
+                          <span class="news-date">June 2025</span>
+                          <span class="news-title">Presenting at International Conference on Urban Planning</span>
+                        </div>
+                      </div>
+                                                                                                                                    
 
-                <div class="news-item">
-                    <div class="news-date">April 2025</div>
-                    <div class="news-title">Awarded Research Fellowship for Environmental AI project</div>
-                </div>
 
-                <div class="news-item">
-                    <div class="news-date">March 2025</div>
-                    <div class="news-title">Started collaboration with NASA on satellite data analysis</div>
                 </div>
+            <div class="see-more-link">
+                <a href="news.html" class="see-more-btn">See All News</a>
             </div>
-
+                
+            </div>
+              
+            
+              
             <!-- Highlighted Research -->
             <div class="content-card">
                 <h2 class="section-title">Highlighted Research</h2>

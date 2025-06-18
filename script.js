@@ -17,39 +17,46 @@ function typeWriter(text, element, speed = 100) {
 }
 
 // Initialize typewriter effect
-document.addEventListener('DOMContentLoaded', function() {
-    const nameElement = document.getElementById('typewriter');
-    typeWriter('Minho Kim', nameElement, 150);
-});
-
-// Navigation functionality
-function showPage(pageId) {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-    });
-    
-    // Show selected page
-    document.getElementById(pageId).classList.add('active');
-    
-    // Update navigation
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-    });
-    const navLink = document.querySelector(`[data-page="${pageId}"]`);
-    if (navLink) {
-        navLink.classList.add('active');
+document.addEventListener("DOMContentLoaded", function () {
+    const typewriter = document.getElementById("typewriter");
+    const words = [": Planner", ": Engineer", ": Data Scientist"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentWord = words[wordIndex];
+      
+      if (isDeleting) {
+        charIndex--;
+        typewriter.textContent = currentWord.substring(0, charIndex);
+  
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 500); // Short pause before typing new word
+        } else {
+          setTimeout(type, 50);
+        }
+  
+      } else {
+        charIndex++;
+        typewriter.textContent = currentWord.substring(0, charIndex);
+  
+        if (charIndex === currentWord.length) {
+          setTimeout(() => {
+            isDeleting = true;
+            type();
+          }, 2000); // 1s pause before deleting
+        } else {
+          setTimeout(type, 100);
+        }
+      }
     }
-}
+  
+    type();
+  });
 
-// Add click event listeners to navigation links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const pageId = link.getAttribute('data-page');
-        showPage(pageId);
-    });
-});
 
 // Create floating particles
 function createParticle() {
