@@ -1,2 +1,259 @@
 <!DOCTYPE html>
-<html><head><title>Research</title><link rel="stylesheet" href="style.css" /></head><body><main><div class="container">Research Content</div></main></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Minho Kim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Minho Kim</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="research.html" class="nav-link active">Research</a></li>
+                    <li><a href="experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-card">
+                <div class="research-section">
+                    <h2 class="section-title">Projects</h2>
+                    
+                    <!-- Filter Controls -->
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="field-filter">Filter by Field:</label>
+                            <select id="field-filter" class="filter-select">
+                                <option value="">All Fields</option>
+                                <option value="Natural Hazards">Natural Hazards</option>
+                                <option value="GeoAI">GeoAI</option>
+                                <option value="Urban Planning">Urban Planning</option>
+                                <option value="Network Science">Network Science</option>
+                                <option value="ML/DL">ML/DL</option>
+                                <option value="Remote Sensing">Remote Sensing</option>
+                                <option value="Coastal">Coastal</option>
+                                <option value="Geopolitical">Geopolitical</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="status-filter">Filter by Status:</label>
+                            <select id="status-filter" class="filter-select">
+                                <option value="">All Status</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="In Progress">In Progress</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="text" id="search-input" placeholder="Search projects..." class="search-input">
+                        </div>
+                        <button id="clear-filters" class="clear-btn">Clear Filters</button>
+                    </div>
+
+                    <table class="research-table" id="projects-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Research Field</th>
+                                <th>Status</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-fields="Natural Hazards,GeoAI" data-status="Ongoing">
+                                <td>GeoAI for Natural Hazard Prediction</td>
+                                <td><span class="field-tag">Natural Hazards</span><span class="field-tag">GeoAI</span></td>
+                                <td>Ongoing</td>
+                                <td>2021-Present</td>
+                            </tr>
+                            <tr data-fields="Urban Planning,Network Science" data-status="Ongoing">
+                                <td>Urban Resilience Network Analysis</td>
+                                <td><span class="field-tag">Urban Planning</span><span class="field-tag">Network Science</span></td>
+                                <td>Ongoing</td>
+                                <td>2022-Present</td>
+                            </tr>
+                            <tr data-fields="Urban,ML/DL" data-status="Completed">
+                                <td>Local Climate Zone Classification</td>
+                                <td><span class="field-tag">Urban</span><span class="field-tag">ML/DL</span></td>
+                                <td>Completed</td>
+                                <td>2019-2021</td>
+                            </tr>
+                            <tr data-fields="Remote Sensing,Geopolitical" data-status="Completed">
+                                <td>DInSAR Nuclear Test Site Detection</td>
+                                <td><span class="field-tag">Remote Sensing</span><span class="field-tag">Geopolitical</span></td>
+                                <td>Completed</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr data-fields="Natural Hazards,Coastal" data-status="In Progress">
+                                <td>Coastal Flood Risk Modeling</td>
+                                <td><span class="field-tag">Natural Hazards</span><span class="field-tag">Coastal</span></td>
+                                <td>In Progress</td>
+                                <td>2023-Present</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="research-section">
+                    <h2 class="section-title">Publications</h2>
+                    
+                    <!-- Filter Controls for Publications -->
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="pub-year-filter">Filter by Year:</label>
+                            <select id="pub-year-filter" class="filter-select">
+                                <option value="">All Years</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2021">2021</option>
+                                <option value="2018">2018</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="text" id="pub-search-input" placeholder="Search publications..." class="search-input">
+                        </div>
+                        <button id="clear-pub-filters" class="clear-btn">Clear Filters</button>
+                    </div>
+
+                    <table class="research-table" id="publications-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Authors</th>
+                                <th>Journal/Conference</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-year="2021">
+                                <td>Multi-scale CNN for Local Climate Zone Classification</td>
+                                <td>M. Kim, Y. Kim</td>
+                                <td>Remote Sensing</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr data-year="2018">
+                                <td>DInSAR Analysis of Nuclear Test Sites Using Sentinel-1</td>
+                                <td>M. Kim, Y. Kim</td>
+                                <td>IEEE TGRS</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr data-year="2024">
+                                <td>GeoAI Applications in Environmental Planning</td>
+                                <td>M. Kim, J. Radke, M. Gonzalez</td>
+                                <td>Nature Communications</td>
+                                <td>2024</td>
+                            </tr>
+                            <tr data-year="2023">
+                                <td>Urban Resilience Through Network Analysis</td>
+                                <td>M. Kim, M. Gonzalez</td>
+                                <td>Urban Studies</td>
+                                <td>2023</td>
+                            </tr>
+                            <tr data-year="2024">
+                                <td>Machine Learning for Natural Hazard Prediction</td>
+                                <td>M. Kim, J. Radke</td>
+                                <td>Environmental Research Letters</td>
+                                <td>2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality for Projects table
+        function filterProjects() {
+            const fieldFilter = document.getElementById('field-filter').value;
+            const statusFilter = document.getElementById('status-filter').value;
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const table = document.getElementById('projects-table');
+            const rows = table.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const fields = row.getAttribute('data-fields') || '';
+                const status = row.getAttribute('data-status') || '';
+                const title = row.cells[0].textContent.toLowerCase();
+
+                const fieldMatch = !fieldFilter || fields.includes(fieldFilter);
+                const statusMatch = !statusFilter || status === statusFilter;
+                const searchMatch = !searchTerm || title.includes(searchTerm);
+
+                if (fieldMatch && statusMatch && searchMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Filter functionality for Publications table
+        function filterPublications() {
+            const yearFilter = document.getElementById('pub-year-filter').value;
+            const searchTerm = document.getElementById('pub-search-input').value.toLowerCase();
+            const table = document.getElementById('publications-table');
+            const rows = table.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const year = row.getAttribute('data-year') || '';
+                const title = row.cells[0].textContent.toLowerCase();
+                const authors = row.cells[1].textContent.toLowerCase();
+                const journal = row.cells[2].textContent.toLowerCase();
+
+                const yearMatch = !yearFilter || year === yearFilter;
+                const searchMatch = !searchTerm || 
+                    title.includes(searchTerm) || 
+                    authors.includes(searchTerm) || 
+                    journal.includes(searchTerm);
+
+                if (yearMatch && searchMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Projects filters
+            document.getElementById('field-filter').addEventListener('change', filterProjects);
+            document.getElementById('status-filter').addEventListener('change', filterProjects);
+            document.getElementById('search-input').addEventListener('input', filterProjects);
+            
+            document.getElementById('clear-filters').addEventListener('click', function() {
+                document.getElementById('field-filter').value = '';
+                document.getElementById('status-filter').value = '';
+                document.getElementById('search-input').value = '';
+                filterProjects();
+            });
+
+            // Publications filters
+            document.getElementById('pub-year-filter').addEventListener('change', filterPublications);
+            document.getElementById('pub-search-input').addEventListener('input', filterPublications);
+            
+            document.getElementById('clear-pub-filters').addEventListener('click', function() {
+                document.getElementById('pub-year-filter').value = '';
+                document.getElementById('pub-search-input').value = '';
+                filterPublications();
+            });
+        });
+    </script>
+</body>
+</html>

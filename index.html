@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minho Kim - Home</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minho Kim - PhD Candidate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Floating particles -->
+    <div class="particles"></div>
+
+    <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">Minho Kim</a>
@@ -21,10 +25,177 @@
             </nav>
         </div>
     </header>
+
+    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Home content goes here -->
+            <!-- Home Page -->
+            <div class="hero">
+                <div class="hero-main">
+                    <div class="hero-left">
+                        <div class="hero-photo" id="heroPhoto">
+                            <img src="images/avatar.jpg" alt="Minho Kim" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
+                        <div class="social-icons">
+                            <a href="mailto:minho@berkeley.edu" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="Google Scholar">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="ResearchGate">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="ORCID">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="typewriter-container">
+                            <h1 class="hero-name">
+                                <span id="typewriter" class="typewriter"></span>
+                            </h1>
+                        </div>
+                        <p class="hero-subtitle">PhD Candidate in Environmental Planning</p>
+                        <p class="hero-description">
+                            I'm a PhD candidate at UC Berkeley's Environmental Planning program, using GeoAI and machine learning 
+                            to model natural hazards and predict risks for environmental planning and management of complex urban 
+                            and natural systems. My work bridges computer vision, deep learning, and network data science to address 
+                            critical environmental challenges.
+                        </p>
+                        <a href="research.html" class="cta-button">Explore My Research</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Interests - Compact -->
+            <div class="content-card">
+                <h2 class="section-title">Research Interests</h2>
+                <div class="research-interests">
+                    <div class="research-item" onclick="window.location.href='research.html'">
+                        <div class="research-icon">🏙️</div>
+                        <div class="research-title">Urban & Environmental Planning</div>
+                        <div class="research-dropdown">
+                            <p>Sustainable development and smart city solutions using advanced geospatial technologies and AI-driven approaches.</p>
+                        </div>
+                    </div>
+                    <div class="research-item" onclick="window.location.href='research.html'">
+                        <div class="research-icon">⚠️</div>
+                        <div class="research-title">Natural Hazards</div>
+                        <div class="research-dropdown">
+                            <p>Risk assessment and disaster management through predictive modeling and machine learning techniques.</p>
+                        </div>
+                    </div>
+                    <div class="research-item" onclick="window.location.href='research.html'">
+                        <div class="research-icon">🤖</div>
+                        <div class="research-title">GeoAI & ML/DL</div>
+                        <div class="research-dropdown">
+                            <p>Computer vision and deep learning applications for geospatial analysis and environmental monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent News -->
+            <div class="content-card">
+                <h2 class="section-title">Recent News</h2>
+                
+                <div class="news-item">
+                    <div class="news-date">June 2025</div>
+                    <div class="news-title">Presenting at International Conference on Urban Planning</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">May 2025</div>
+                    <div class="news-title">New paper accepted on GeoAI applications in natural hazard modeling</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">April 2025</div>
+                    <div class="news-title">Awarded Research Fellowship for Environmental AI project</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">March 2025</div>
+                    <div class="news-title">Started collaboration with NASA on satellite data analysis</div>
+                </div>
+            </div>
+
+            <!-- Highlighted Research -->
+            <div class="content-card">
+                <h2 class="section-title">Highlighted Research</h2>
+                
+                <div class="research-highlight">
+                    <div class="research-image">🌍</div>
+                    <div class="research-content">
+                        <h3>GeoAI for Natural Hazard Prediction</h3>
+                        <p>Developing deep learning models to predict environmental risks in urban systems using satellite imagery and geospatial data.</p>
+                        <div class="research-tags">
+                            <span class="research-tag natural-hazards">Natural Hazards</span>
+                            <span class="research-tag geoai">GeoAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-highlight">
+                    <div class="research-image">🛰️</div>
+                    <div class="research-content">
+                        <h3>Multi-scale Climate Zone Classification</h3>
+                        <p>Using convolutional neural networks to classify local climate zones from multispectral satellite images for urban planning.</p>
+                        <div class="research-tags">
+                            <span class="research-tag urban">Urban</span>
+                            <span class="research-tag ml-dl">ML/DL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-highlight">
+                    <div class="research-image">📡</div>
+                    <div class="research-content">
+                        <h3>DInSAR for Geopolitical Monitoring</h3>
+                        <p>Applied radar interferometry techniques to detect surface changes at nuclear test sites using Sentinel-1 data.</p>
+                        <div class="research-tags">
+                            <span class="research-tag remote-sensing">Remote Sensing</span>
+                            <span class="research-tag geopolitical">Geopolitical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-highlight">
+                    <div class="research-image">🏙️</div>
+                    <div class="research-content">
+                        <h3>Urban Resilience Modeling</h3>
+                        <p>Network data science approaches to understand complex urban systems and their response to environmental stressors.</p>
+                        <div class="research-tags">
+                            <span class="research-tag urban-planning">Urban Planning</span>
+                            <span class="research-tag network-science">Network Science</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-highlight">
+                    <div class="research-image">🌊</div>
+                    <div class="research-content">
+                        <h3>Coastal Risk Assessment</h3>
+                        <p>Machine learning frameworks for predicting coastal flooding and sea-level rise impacts on urban infrastructure.</p>
+                        <div class="research-tags">
+                            <span class="research-tag natural-hazards">Natural Hazards</span>
+                            <span class="research-tag coastal">Coastal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="see-more-link">
+                    <a href="research.html" class="see-more-btn">See More Research</a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
