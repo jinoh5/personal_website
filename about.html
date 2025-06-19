@@ -1,47 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me - Minho Kim</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .profile-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .profile-photo {
+      flex: 0 0 220px;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-text {
+      flex: 1 1 400px;
+    }
+
+    .profile-section {
+      margin-top: 2rem;
+    }
+
+    .profile-section h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.25rem;
+    }
+
+    .profile-section ul {
+      padding-left: 1.25em;
+    }
+
+    .profile-details p,
+    .profile-section li {
+      margin: 0.4em 0;
+    }
+
+    .profile-details a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .profile-details a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .profile-photo {
+        margin-bottom: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-      <div class="container nav-container">
-        <a href="index.html" class="logo">Minho Kim</a>
-        <nav>
-          <ul class="nav-menu">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about.html" class="nav-link">About Me</a></li>
-              <li><a href="news.html" class="nav-link">News</a></li>
-              <li><a href="research.html" class="nav-link">Research</a></li>
-              <li><a href="experience.html" class="nav-link">Experience</a></li>
-              <li><a href="teaching.html" class="nav-link">Teaching</a></li>
-              <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<header class="header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Minho Kim</a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About Me</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="research.html" class="nav-link">Research</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+        <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main class="main-content">
-    <div class="container">
-      <div class="content-card">
-        <h2 class="section-title">About Me</h2>
+<main class="main-content">
+  <div class="container">
+    <div class="content-card">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="profile-container">
+        <!-- Left: Photo -->
+        <div class="profile-photo">
+          <img src="images/avatar.jpg" alt="Minho Kim">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="profile-text">
+          <p class="hero-description">
+            I am a PhD candidate in Environmental Planning at UC Berkeley, where I research the intersection of GeoAI, natural hazards, and urban resilience. 
+            My work integrates computer vision, machine learning, and geospatial modeling to develop solutions for complex socio-environmental systems.
+          </p>
+          <p class="hero-description">
+            My background includes civil engineering and environmental data science. I build models and tools to inform planning decisions for communities facing wildfire, debris flow, and climate risks. 
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>PhD in Environmental Planning</strong>, UC Berkeley (2026)
+            <br><small>Dissertation: Data-Driven Planning for Resilience Against Natural Hazard Risks</small></li>
+          <li><strong>MS in Civil & Environmental Engineering</strong>, Seoul National University (2021)
+            <br><small>Thesis: Local Climate Zone Classification Using Multi-Scale Convolutional Networks</small></li>
+          <li><strong>BS in Civil & Environmental Engineering</strong>, Seoul National University (2017)
+            <br><small>Thesis: Monitoring North Korea’s 4th Nuclear Test Site Using Sentinel-1A DInSAR</small></li>
+        </ul>
+      </div>
+
+      <!-- Research Section -->
+      <div class="profile-section">
+        <h3>Research</h3>
         <p class="hero-description">
-          I am a PhD candidate in Environmental Planning at UC Berkeley, where I research the intersection of GeoAI, natural hazards, and urban resilience. My work integrates computer vision, machine learning, and geospatial modeling to develop solutions for complex socio-environmental systems. My background includes both civil engineering and environmental data science.
-          I am passionate about building models and tools that inform planning decisions for communities facing wildfire, debris flow, and climate risks. I actively collaborate with local governments, NGOs, and interdisciplinary researchers to translate data science into actionable insights for real-world impact.
-        </p>
-
-        <p>
-          Outside of academia, I enjoy hiking, photography, and contributing to open-source geospatial projects.
+          My research bridges geospatial data science and environmental planning to enhance the resilience of our built and natural environments against natural hazard risks. 
+          I develop intelligent tools that help us better understand, predict, and respond to natural hazards (especially wildfires and post-fire risks) in an era of accelerating climate extremes. 
+          Through my research, I aim to develop AI-powered environmental decision support systems to aid scientists, policymakers, and emergency response managers. 
+          The nexus where physical modeling, spatial intelligence, and adaptive decision frameworks meet to operationalize climate resilience.
         </p>
       </div>
-    </div>
-  </main>
 
-  <script src="script.js"></script>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

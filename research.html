@@ -1,264 +1,318 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Research - Minho Kim</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!-- Floating particles -->
-        <div class="particles"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research - Minho Kim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .publication-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        <!-- Header -->
-        <header class="header">
-            <div class="container nav-container">
-            <a href="index.html" class="logo">Minho Kim</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Me</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="teaching.html" class="nav-link">Teaching</a></li>
-                    <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
-                </ul>
-            </nav>
+    .publication-item {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid #3366cc;
+    }
+
+    .publication-item:hover {
+      transform: translateY(-2px);
+      transition: 0.3s ease;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .publication-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-item a {
+      color: #3366cc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .publication-item a:hover {
+      text-decoration: underline;
+    }
+
+    .filter-btns {
+      margin-bottom: 2rem;
+    }
+
+    .filter-btns strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .year-btn, .tag-btn {
+      margin: 0.25rem;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .year-btn:hover, .tag-btn:hover {
+      background: #3366cc;
+      color: white;
+      border-color: #3366cc;
+    }
+
+    .year-btn.active, .tag-btn.active {
+      background: #3366cc;
+      color: white;
+      border-color: #3366cc;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tag-label {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating particles -->
+  <div class="particles"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Minho Kim</a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main-content">
+    <div class="container">
+      <div class="content-card">
+        <h2 class="section-title">Publications</h2>
+
+        <!-- Filters -->
+        <div class="filter-controls">
+          <div class="filter-btns">
+            <strong>Filter by Year:</strong>
+            <button class="year-btn active" data-year="all">All</button>
+            <button class="year-btn" data-year="2025">2025</button>
+            <button class="year-btn" data-year="2024">2024</button>
+            <button class="year-btn" data-year="2023">2023</button>
+            <button class="year-btn" data-year="2021">2021</button>
+            <button class="year-btn" data-year="2018">2018</button>
+          </div>
+          <div class="filter-btns">
+            <strong>Filter by Tag:</strong>
+            <div class="tag-container">
+              <button class="tag-btn active" data-tag="all">All</button>
+              <button class="tag-btn" data-tag="RS">Remote Sensing</button>
+              <button class="tag-btn" data-tag="Geospatial">Geospatial</button>
+              <button class="tag-btn" data-tag="Planning">Planning</button>
+              <button class="tag-btn" data-tag="Wildfire">Wildfire</button>
+              <button class="tag-btn" data-tag="NetSci">Network Science</button>
+              <button class="tag-btn" data-tag="ML">Machine Learning</button>
+              <button class="tag-btn" data-tag="NatHaz">Natural Hazards</button>
+              <button class="tag-btn" data-tag="Urban">Urban</button>
             </div>
-        </header>
+          </div>
+        </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="container">
-                <div class="content-card">
-                    <div class="research-section">
-                        <h2 class="section-title">Publications</h2>
-                        
-                        <!-- Filter Controls for Publications -->
-                        <div class="filter-controls">
-                            <div class="filter-group">
-                                <label for="pub-year-filter">Filter by Year:</label>
-                                <select id="pub-year-filter" class="filter-select">
-                                    <option value="">All Years</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2018">2018</option>
-                                </select>
-                            </div>
-                            <div class="filter-group">
-                                <input type="text" id="pub-search-input" placeholder="Search publications..." class="search-input">
-                              </div>
-                              <button id="clear-pub-filters" class="clear-btn">Clear Filters</button>
-                            </div>
+        <!-- Publications -->
+        <div class="publication-list">
+          <div class="publication-item" data-year="2025" data-tags="Wildfire,NatHaz">
+            <p><strong>Minho Kim</strong>, Pais, C., & Gonzalez, M. C. (2025). <a href="#">Fire Spread Simulations Using Cell2Fire on Synthetic and Real Landscapes</a>. <i>Scientific Reports</i></p>
+            <span class="field-tag">Wildfire</span>
+            <span class="field-tag">Natural Hazards</span>
+          </div>
 
-                        <table class="research-table" id="publications-table">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Authors</th>
-                                    <th>Journal/Conference</th>
-                                    <th>Year</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-year="2021">
-                                    <td>Multi-scale CNN for Local Climate Zone Classification</td>
-                                    <td>M. Kim, Y. Kim</td>
-                                    <td>Remote Sensing</td>
-                                    <td>2021</td>
-                                </tr>
-                                <tr data-year="2018">
-                                    <td>DInSAR Analysis of Nuclear Test Sites Using Sentinel-1</td>
-                                    <td>M. Kim, Y. Kim</td>
-                                    <td>IEEE TGRS</td>
-                                    <td>2018</td>
-                                </tr>
-                                <tr data-year="2024">
-                                    <td>GeoAI Applications in Environmental Planning</td>
-                                    <td>M. Kim, J. Radke, M. Gonzalez</td>
-                                    <td>Nature Communications</td>
-                                    <td>2024</td>
-                                </tr>
-                                <tr data-year="2023">
-                                    <td>Urban Resilience Through Network Analysis</td>
-                                    <td>M. Kim, M. Gonzalez</td>
-                                    <td>Urban Studies</td>
-                                    <td>2023</td>
-                                </tr>
-                                <tr data-year="2024">
-                                    <td>Machine Learning for Natural Hazard Prediction</td>
-                                    <td>M. Kim, J. Radke</td>
-                                    <td>Environmental Research Letters</td>
-                                    <td>2024</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+          <div class="publication-item" data-year="2025" data-tags="Urban,ML">
+            <p>Yao, X., <strong>Minho Kim</strong>, Dronova, I., et al. (2025). <a href="https://doi.org/10.1016/j.landurbplan.2025.105420">Community-scale microclimate simulation using Airborne Laser Scanning and object-based urban tree classification</a>. <i>Landscape and Urban Planning</i></p>
+            <span class="field-tag">Urban</span>
+            <span class="field-tag">Machine Learning</span>
+          </div>
 
-                    <div class="research-section">
-                        <h2 class="section-title">Projects</h2>
-                        
-                        <!-- Filter Controls -->
-                        <div class="filter-controls">
-                            <div class="filter-group">
-                                <label for="field-filter">Filter by Field:</label>
-                                <select id="field-filter" class="filter-select">
-                                    <option value="">All Fields</option>
-                                    <option value="Natural Hazards">Natural Hazards</option>
-                                    <option value="GeoAI">GeoAI</option>
-                                    <option value="Urban Planning">Urban Planning</option>
-                                    <option value="Network Science">Network Science</option>
-                                    <option value="ML/DL">ML/DL</option>
-                                    <option value="Remote Sensing">Remote Sensing</option>
-                                    <option value="Coastal">Coastal</option>
-                                    <option value="Geopolitical">Geopolitical</option>
-                                </select>
-                            </div>
-                            <div class="filter-group">
-                                <label for="status-filter">Filter by Status:</label>
-                                <select id="status-filter" class="filter-select">
-                                    <option value="">All Status</option>
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                    <option value="In Progress">In Progress</option>
-                                </select>
-                            </div>
-                            <div class="filter-group">
-                                <input type="text" id="search-input" placeholder="Search projects..." class="search-input">
-                            <!-- </div> -->
-                            <button id="clear-filters" class="clear-btn">Clear Filters</button>
-                        </div>
-                        <br>
+          <div class="publication-item" data-year="2021" data-tags="RS,Urban,ML">
+            <p><strong>Minho Kim</strong>, Jeong, D., Kim, Y. (2021). <a href="https://doi.org/10.1016/j.isprsjprs.2021.09.015">Local climate zone classification using a multi-scale, multi-level attention network</a>. <i>ISPRS Journal of Photogrammetry and Remote Sensing</i></p>
+            <span class="field-tag">Remote Sensing</span>
+            <span class="field-tag">Wildfire</span>
+            <span class="field-tag">Machine Learning</span>
+          </div>
+          
+          <!-- Kim, M., Song, H., & Kim, Y. (2020). Direct short-term forecast of photovoltaic power through a comparative study between COMS and Himawari-8 meteorological satellite images in a deep neural network. Remote Sensing, 12(15), 2357. -->
+          <div class="publication-item" data-year="2020" data-tags="RS,Geospatial">
+            <p><strong>Minho Kim</strong>, Song, H., & Kim, Y. (2020). <a href="https://doi.org/10.3390/rs12152357">Direct short-term forecast of photovoltaic power through a comparative study between COMS and Himawari-8 meteorological satellite images in a deep neural network</a>. <i>KJRS</i></p>
+            <span class="field-tag">Remote Sensing</span>
+            <span class="field-tag">Geospatial</span>
+          </div>
 
-                        <table class="research-table" id="projects-table">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Research Field</th>
-                                    <th>Status</th>
-                                    <th>Year</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-fields="Natural Hazards,GeoAI" data-status="Ongoing">
-                                    <td>GeoAI for Natural Hazard Prediction</td>
-                                    <td><span class="field-tag">Natural Hazards</span><span class="field-tag">GeoAI</span></td>
-                                    <td>Ongoing</td>
-                                    <td>2021-Present</td>
-                                </tr>
-                                <tr data-fields="Urban Planning,Network Science" data-status="Ongoing">
-                                    <td>Urban Resilience Network Analysis</td>
-                                    <td><span class="field-tag">Urban Planning</span><span class="field-tag">Network Science</span></td>
-                                    <td>Ongoing</td>
-                                    <td>2022-Present</td>
-                                </tr>
-                                <tr data-fields="Urban,ML/DL" data-status="Completed">
-                                    <td>Local Climate Zone Classification</td>
-                                    <td><span class="field-tag">Urban</span><span class="field-tag">ML/DL</span></td>
-                                    <td>Completed</td>
-                                    <td>2019-2021</td>
-                                </tr>
-                                <tr data-fields="Remote Sensing,Geopolitical" data-status="Completed">
-                                    <td>DInSAR Nuclear Test Site Detection</td>
-                                    <td><span class="field-tag">Remote Sensing</span><span class="field-tag">Geopolitical</span></td>
-                                    <td>Completed</td>
-                                    <td>2017</td>
-                                </tr>
-                                <tr data-fields="Natural Hazards,Coastal" data-status="In Progress">
-                                    <td>Coastal Flood Risk Modeling</td>
-                                    <td><span class="field-tag">Natural Hazards</span><span class="field-tag">Coastal</span></td>
-                                    <td>In Progress</td>
-                                    <td>2023-Present</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                        
-                </div>
+          <!-- Kim, M., Jung, M., & Kim, Y. (2019). Histogram matching of Sentinel-2 spectral information to enhance Planetscope imagery for effective wildfire damage assessment. Korean Journal of Remote Sensing, 35(4), 517-534. -->
+          <div class="publication-item" data-year="2019" data-tags="RS,Wildfire">
+            <p><strong>Minho Kim</strong>, Jung, M., Kim, Y. (2019). <a href="https://doi.org/10.7780/kjrs.2019.35.4.3">Histogram matching of Sentinel-2 spectral information to enhance Planetscope imagery for effective wildfire damage assessment</a>. <i>KJRS</i></p>
+            <span class="field-tag">Remote Sensing</span>
+            <span class="field-tag">Wildfire</span>
+          </div>
+
+          <!-- Kim, Y., Kim, M., Choi, J., & Kim, Y. (2017). Image fusion of spectrally nonoverlapping imagery using SPCA and MTF-based filters. IEEE Geoscience and Remote Sensing Letters, 14(12), 2295-2299. -->
+          <div class="publication-item" data-year="2017" data-tags="RS, Geospatial">
+            <p>Kim, Y., <strong>Minho Kim</strong>, Choi, J., Kim, Y. (2017). <a href="https://doi.org/10.1109/LGRS.2017.2762427">Image fusion of spectrally nonoverlapping imagery using SPCA and MTF-based filters</a>. <i>IEEE GRSL</i></p>
+            <span class="field-tag">Remote Sensing</span>
+            <span class="field-tag">Geospatial</span>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+    <div class="content-card">
+    <div class="research-section">
+        <h2 class="section-title">Projects</h2>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="field-filter">Filter by Field:</label>
+                <select id="field-filter" class="filter-select">
+                    <option value="">All Fields</option>
+                    <option value="Natural Hazards">Natural Hazards</option>
+                    <option value="GeoAI">GeoAI</option>
+                    <option value="Urban Planning">Urban Planning</option>
+                    <option value="Network Science">Network Science</option>
+                    <option value="ML/DL">ML/DL</option>
+                    <option value="Remote Sensing">Remote Sensing</option>
+                    <option value="Coastal">Coastal</option>
+                    <option value="Geopolitical">Geopolitical</option>
+                </select>
             </div>
-        </main>
+            <div class="filter-group">
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter" class="filter-select">
+                    <option value="">All Status</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                    <option value="In Progress">In Progress</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <input type="text" id="search-input" placeholder="Search projects..." class="search-input">
+            </div>
+            <button id="clear-filters" class="clear-btn">Clear Filters</button>
+        </div>
 
-        <script src="script.js"></script>
-        <script>
-            // Filter functionality for Projects table
-            function filterProjects() {
-                const fieldFilter = document.getElementById('field-filter').value;
-                const statusFilter = document.getElementById('status-filter').value;
-                const searchTerm = document.getElementById('search-input').value.toLowerCase();
-                const table = document.getElementById('projects-table');
-                const rows = table.querySelectorAll('tbody tr');
+        <table class="research-table" id="projects-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Research Field</th>
+                    <th>Status</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-fields="Natural Hazards,GeoAI" data-status="Ongoing">
+                    <td>GeoAI for Natural Hazard Prediction</td>
+                    <td><span class="field-tag">Natural Hazards</span><span class="field-tag">GeoAI</span></td>
+                    <td>Ongoing</td>
+                    <td>2021-Present</td>
+                </tr>
+                <tr data-fields="Urban Planning,Network Science" data-status="Ongoing">
+                    <td>Urban Resilience Network Analysis</td>
+                    <td><span class="field-tag">Urban Planning</span><span class="field-tag">Network Science</span></td>
+                    <td>Ongoing</td>
+                    <td>2022-Present</td>
+                </tr>
+                <tr data-fields="Urban,ML/DL" data-status="Completed">
+                    <td>Local Climate Zone Classification</td>
+                    <td><span class="field-tag">Urban</span><span class="field-tag">ML/DL</span></td>
+                    <td>Completed</td>
+                    <td>2019-2021</td>
+                </tr>
+                <tr data-fields="Remote Sensing,Geopolitical" data-status="Completed">
+                    <td>DInSAR Nuclear Test Site Detection</td>
+                    <td><span class="field-tag">Remote Sensing</span><span class="field-tag">Geopolitical</span></td>
+                    <td>Completed</td>
+                    <td>2017</td>
+                </tr>
+                <tr data-fields="Natural Hazards,Coastal" data-status="In Progress">
+                    <td>Coastal Flood Risk Modeling</td>
+                    <td><span class="field-tag">Natural Hazards</span><span class="field-tag">Coastal</span></td>
+                    <td>In Progress</td>
+                    <td>2023-Present</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</div>
+</main>    
+    
+  </main>
 
-                rows.forEach(row => {
-                    const fields = row.getAttribute('data-fields') || '';
-                    const status = row.getAttribute('data-status') || '';
-                    const title = row.cells[0].textContent.toLowerCase();
+  <!-- Filter Script -->
+  <script>
+    const yearButtons = document.querySelectorAll('.year-btn');
+    const tagButtons = document.querySelectorAll('.tag-btn');
+    const pubs = document.querySelectorAll('.publication-item');
 
-                    const fieldMatch = !fieldFilter || fields.includes(fieldFilter);
-                    const statusMatch = !statusFilter || status === statusFilter;
-                    const searchMatch = !searchTerm || title.includes(searchTerm);
+    let currentYear = "all";
+    let currentTag = "all";
 
-                    if (fieldMatch && statusMatch && searchMatch) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-            }
+    function updateFilter() {
+      pubs.forEach(pub => {
+        const pubYear = pub.getAttribute('data-year');
+        const pubTags = pub.getAttribute('data-tags').split(',');
 
-            // Filter functionality for Publications table
-            function filterPublications() {
-                const yearFilter = document.getElementById('pub-year-filter').value;
-                const searchTerm = document.getElementById('pub-search-input').value.toLowerCase();
-                const table = document.getElementById('publications-table');
-                const rows = table.querySelectorAll('tbody tr');
+        const matchYear = currentYear === "all" || pubYear === currentYear;
+        const matchTag = currentTag === "all" || pubTags.includes(currentTag);
 
-                rows.forEach(row => {
-                    const year = row.getAttribute('data-year') || '';
-                    const title = row.cells[0].textContent.toLowerCase();
-                    const authors = row.cells[1].textContent.toLowerCase();
-                    const journal = row.cells[2].textContent.toLowerCase();
+        pub.style.display = (matchYear && matchTag) ? "block" : "none";
+      });
 
-                    const yearMatch = !yearFilter || year === yearFilter;
-                    const searchMatch = !searchTerm || 
-                        title.includes(searchTerm) || 
-                        authors.includes(searchTerm) || 
-                        journal.includes(searchTerm);
+      yearButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.year === currentYear));
+      tagButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.tag === currentTag));
+    }
 
-                    if (yearMatch && searchMatch) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-            }
+    yearButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentYear = btn.dataset.year;
+        updateFilter();
+      });
+    });
 
-            // Event listeners
-            document.addEventListener('DOMContentLoaded', function() {
-                // Projects filters
-                document.getElementById('field-filter').addEventListener('change', filterProjects);
-                document.getElementById('status-filter').addEventListener('change', filterProjects);
-                document.getElementById('search-input').addEventListener('input', filterProjects);
-                
-                document.getElementById('clear-filters').addEventListener('click', function() {
-                    document.getElementById('field-filter').value = '';
-                    document.getElementById('status-filter').value = '';
-                    document.getElementById('search-input').value = '';
-                    filterProjects();
-                });
+    tagButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentTag = btn.dataset.tag;
+        updateFilter();
+      });
+    });
 
-                // Publications filters
-                document.getElementById('pub-year-filter').addEventListener('change', filterPublications);
-                document.getElementById('pub-search-input').addEventListener('input', filterPublications);
-                
-                document.getElementById('clear-pub-filters').addEventListener('click', function() {
-                    document.getElementById('pub-year-filter').value = '';
-                    document.getElementById('pub-search-input').value = '';
-                    filterPublications();
-                });
-            });
-        </script>
-    </body>
-    </html>
+    document.addEventListener("DOMContentLoaded", updateFilter);
+  </script>
+</body>
+</html>

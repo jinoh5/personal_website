@@ -5,6 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News - Minho Kim</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .year-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 1em 0;
+      font-weight: bold;
+    }
+    .year-nav a {
+      color: #3e3e3e;
+      text-decoration: none;
+      background: #f0f0f0;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .year-nav a:hover {
+      background: #e0e0e0;
+    }
+    .news-year-group {
+      scroll-margin-top: 80px;
+    }
+  .year-nav a.active {
+  background: #333;
+  color: white;
+  transition: all 0.3s;
+}
+
+.news-year-group {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearLinks = document.querySelectorAll(".year-nav a");
+    const yearGroups = document.querySelectorAll(".news-year-group");
+
+    function setActive(link) {
+      yearLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    }
+
+    yearLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const year = link.getAttribute("href").substring(1);
+
+        if (year === "all") {
+          yearGroups.forEach(group => group.style.display = "block");
+        } else {
+          yearGroups.forEach(group => {
+            group.style.display = group.id === year ? "block" : "none";
+          });
+        }
+
+        setActive(link);
+      });
+    });
+  });
+</script>
 </head>
 <body>
   <header class="header">
@@ -28,65 +93,123 @@
     <div class="container">
       <div class="content-card">
         <h2 class="section-title">Recent News</h2>
+<h4 class="sub-header">Filter by Year</h4>
+<div class="year-nav">
+  <a href="#all" onclick="document.querySelectorAll('.news-year-group').forEach(e => e.style.display = 'block')">All</a>
+          <a href="#year2025">2025</a>
+          <a href="#year2024">2024</a>
+          <a href="#year2023">2023</a>
+        </div>
 
-        <!-- <div class="scrollable-news"> -->
-          <div class="news-item">
-            <div class="news-date">Oct 2025</div>
-            <div class="news-title"><b>[Talk]</b> I was invited to present on wildfires and climate change at <b>Georgia Tech</b></div>
-          </div>    
-          <div class="news-item">
-            <div class="news-date">June 2025</div>
-            <div class="news-title"><b>[Paper]</b> Our paper on "Community-scale microclimate simulation and object-based urban tree classification" was published in <em>Landscape and Urban Planning</em>.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">June 2025</div>
-            <div class="news-title"><b>[Paper]</b> Our paper on "Fire Spread Simulations Using Cell2Fire" was accepted to <em>Scientific Reports</em>.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">May 2025</div>
-            <div class="news-title"><b>[Research]</b> Our proposal on "Multi-scale mitigation of wildfire risk vulnerabilities in the natural and built environments" was awarded the 2025 Lau Grant.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">July 2024</div>
-            <div class="news-title"><b>[Talk]</b> I was invited to present on WUI risk modeling and fire suppression strategies at the Catalan Fire Service (Spain).</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">July 2024</div>
-            <div class="news-title"><b>[Talk]</b> I was invited to present on fire spread modeling and fire suppression strategies at <b>Wageningen University</b></div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">Feb 2024</div>
-            <div class="news-title"><b>[Talk]</b> I was invited to present on data-driven planning and fire spread modeling at <b>Georgia Tech</b></div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">May 2024</div>
-            <div class="news-title"><b>[Award]</b> I received the Beatrix C. Farrand Memorial Fellowship for Research.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">April 2024</div>
-            <div class="news-title"><b>[Award]</b> I received the Outstanding Graduate Student Instructor Award.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">May 2023 – June 2024</div>
-            <div class="news-title"><b>[Research]</b> Led bulking factor modeling for debris flows (CalTrans-funded project.)</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">July 2023</div>
-            <div class="news-title"><b>[Conference]</b> I presented our work on semantic segmentaiton of lifeforms at IGARSS 2023 and served as Session Chair.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">May 2023</div>
-            <div class="news-title"><b>[PhD]</b> I successfully passed my qualifying exam. Thank you to my committee members: <a href="https://ced.berkeley.edu/people/john-radke">John Radke</a>, <a href="https://scholar.google.com/citations?user=YAGjro8AAAAJ&hl=en">Marta C. Gonzalez</a>, <a href="https://scholar.google.com/citations?user=qDUBrUMAAAAJ&hl=en">Iryna Dronova</a>, and <a href="https://scholar.google.com/citations?user=1QlLPcEAAAAJ&hl=en">Solomon Hsiang</a>. </div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">May 2023</div>
-            <div class="news-title"><b>[Award]</b> I received the Beatrix C. Farrand Memorial Fellowship for Conference Travel.</div>
-          </div>
-          <div class="news-item">
-            <div class="news-date">Feb 2023</div>
-            <div class="news-title"><b>[Award]</b> I received the Robert N. Colwell Memorial Fellowship from ASPRS.</div>
-          </div>
-      <!-- </div> -->
+        <div id="year2025" class="news-year-group">
+  <h3>2025</h3>
+  <div class="news-item">
+    <div class="news-date">Oct 2025</div>
+    <div class="news-title"><b>[Talk]</b> I was invited to present a guest lecture on wildfires and climate change at <b>Georgia Tech</b> for CP4190: Introduction to Climate Change Planning</div>
+  </div>    
+  <div class="news-item">
+    <div class="news-date">June 2025</div>
+    <div class="news-title"><b>[Paper]</b> Our paper on "Community-scale microclimate simulation and object-based urban tree classification" was published in <em>Landscape and Urban Planning</em>.</div>
+    <div class="news-links">
+        <a href="https://doi.org/10.1016/j.landurbplan.2025.105420" target="_blank" class="news-btn">
+          <i class="fas fa-file-alt"></i> Paper
+        </a>    
+  </div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">June 2025</div>
+    <div class="news-title"><b>[Paper]</b> Our paper on "Fire Spread Simulations Using Cell2Fire" was accepted to <em>Scientific Reports</em>.</div>
+    <div class="news-links">
+        <a href="https://doi.org/10.1016/j.landurbplan.2025.105420" target="_blank" class="news-btn">
+          <i class="fas fa-file-alt"></i> Paper
+        </a>    
+  </div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">May 2025</div>
+    <div class="news-title">
+      <b>[Research]</b> Our proposal on "Multi-scale mitigation of wildfire risk vulnerabilities in the natural and built environment" was awarded the 2025 Lau Grant for Just Climate Futures.
+      <div class="news-links">
+      <a href="https://ced.berkeley.edu/news/ced-awards-seed-grants-for-climate-research" target="_blank" class="news-btn">
+        <i class="fas fa-graduation-cap"></i> News
+      </a>
+      </div>
+    </div>
+  </div>
+  
+        </div>
+
+        <div id="year2024" class="news-year-group">
+  <h3>2024</h3>
+  <div class="news-item">
+    <div class="news-date">September 2024</div>
+    <div class="news-title"><b>[Research]</b> We released the final report for our project with CalTrans on estimating bulking factors to protect critical infrastructure to post-fire debris flow risks. </div>
+    <div class="news-links">
+        <a href="https://rosap.ntl.bts.gov/view/dot/82348" target="_blank" class="news-btn">
+          <i class="fas fa-file-alt"></i> Report
+        </a>
+        </div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">August 2024</div>
+    <div class="news-title"><b>[Talk]</b> I was invited to present on WUI risk modeling and fire suppression strategies at the Pau Costa Foundation.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">July 2024</div>
+    <div class="news-title"><b>[Talk]</b> I was invited to present on WUI risk modeling and fire suppression strategies at the Catalan Fire Service (Spain).</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">July 2024</div>
+    <div class="news-title"><b>[Talk]</b> I was invited to present on fire spread modeling and fire suppression strategies at <b>Wageningen University</b></div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">July 2024</div>
+    <div class="news-title"><b>[Research]</b> I am visiting the Catalan Fire Service (headquarters in Universitat Autònoma de Barcelona) to research and gain field experience with the generous support of the GRAF (Group of Support to Forest Actions) team and Pau Costa Foundation.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">May 2024</div>
+    <div class="news-title"><b>[Award]</b> I received the Beatrix C. Farrand Memorial Fellowship for Research.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">April 2024</div>
+    <div class="news-title"><b>[Award]</b> I received the 2024 Outstanding Graduate Student Instructor Award from UC Berkeley.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">Feb 2024</div>
+    <div class="news-title"><b>[Talk]</b> I was invited to present a guest lecture on data-driven planning and fire spread modeling at <b>Georgia Tech</b> for CP4190: Introduction to Climate Change Planning</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">Jan 2024</div>
+    <div class="news-title"><b>[PhD]</b> I will be the Graduate Student Instructor for LDARCH/ESPM C289: Applied Remote Sensing, taught by Prof. <a href="https://scholar.google.com/citations?user=qDUBrUMAAAAJ&hl=en">Iryna Dronova</a>. Looking forward to sharing remote sensing with all the students! </div>.
+  </div>  
+        </div>
+
+        <div id="year2023" class="news-year-group">
+  <h3>2023</h3>
+  <div class="news-item">
+    <div class="news-date">July 2023</div>
+    <div class="news-title"><b>[Conference]</b> I attended IGARSS 2023 in Pasadena, CA and presented an oral presentation on semantic segmentation of lifeforms. Honored to serve as <b>Session Chair</b> for the Session on Image Analysis for Land Cover Mapping.</div>
+    <div class="news-links">
+        <a href="10.1109/IGARSS52108.2023.10282737" target="_blank" class="news-btn"><i class="fas fa-file-alt"></i> Paper</a> <a href="https://2023.ieeeigarss.org/view_session.php?SessionID=1033" target="_blank" class="news-btn"><i class="fas fa-circle-info"></i> Session</a>
+    </div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">May 2023</div>   
+    <div class="news-title"><b>[PhD]</b> I successfully passed my qualifying exam. Thank you to my committee members: <a href="https://ced.berkeley.edu/people/john-radke">John Radke</a>, <a href="https://scholar.google.com/citations?user=YAGjro8AAAAJ&hl=en">Marta C. Gonzalez</a>, <a href="https://scholar.google.com/citations?user=qDUBrUMAAAAJ&hl=en">Iryna Dronova</a>, and <a href="https://scholar.google.com/citations?user=1QlLPcEAAAAJ&hl=en">Solomon Hsiang</a>.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">May 2023</div>
+    <div class="news-title"><b>[Award]</b> I received the Beatrix C. Farrand Memorial Fellowship for Conference Travel.</div>
+  </div>
+  <div class="news-item">
+    <div class="news-date">Feb 2023</div>
+    <div class="news-title"><b>[Award]</b> I received the Robert N. Colwell Memorial Fellowship from ASPRS.</div>
+        <div class="news-links">
+            <a href="https://www.asprs.org/awards-and-scholarships/award-winners/2023-award-winners.html" target="_blank" class="news-btn">
+              <i class="fas fa-graduation-cap"></i> News
+            </a>
+        </div>
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
