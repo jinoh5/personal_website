@@ -749,7 +749,7 @@ body {
     margin-top: 1rem;
   }
   .scrollable-news {
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: scroll;
     padding-right: 10px;
     margin-top: 1rem;
