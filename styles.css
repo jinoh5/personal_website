@@ -723,6 +723,37 @@ body {
         }
     }
 
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      
+    @media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    }
+      
 
 /* Floating particles */
 .particle {
