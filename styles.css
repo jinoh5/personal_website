@@ -460,6 +460,80 @@ a:hover, .nav-link:hover, .see-more-btn:hover {
 .research-tag.geospatial { background: #bdfff8; }
 .research-tag.rs { background: #217c39; }
 
+.research-tag.paper { background: #333; }
+.research-tag.cpaper { background: #333; }
+.research-tag.ppaper { background: #333; }
+
+.field-tag.wildfire      { background: #e74c3c; color: white; }
+.field-tag.nathaz        { background: #ffa94d; color: white; }
+.field-tag.ml            { background: #599bff; color: white; }
+.field-tag.urban         { background: #f1a2e2; color: white; }
+.field-tag.rs            { background: #217c39; color: white; }
+.field-tag.geospatial    { background: #bdfff8; color: #333; }
+.field-tag.planning      { background: #27ae60; color: white; }
+.field-tag.netsci        { background: #9c66f2; color: white; }
+.field-tag.paper         { background: #333; color: white; }
+.field-tag.ppaper        { background: #333; color: white; }
+.field-tag.cpaper        { background: #333; color: white; }
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-row strong {
+    white-space: nowrap;
+    min-width: 130px;
+    font-size: 1rem;
+    color: #2d3748;
+  }
+  
+  .filter-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+  
+/* ===== UNIFIED FILTER BUTTONS ===== */
+.year-btn, .type-btn, .tag-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .year-btn:hover,
+  .type-btn:hover,
+  .tag-btn:hover {
+    background: #3366cc;
+    color: white;
+    border-color: #3366cc;
+    transform: translateY(-1px);
+  }
+  
+  .year-btn.active,
+  .type-btn.active,
+  .tag-btn.active {
+    background: #3366cc;
+    color: white;
+    border-color: #3366cc;
+    box-shadow: 0 4px 10px rgba(51, 102, 204, 0.2);
+  }
+  
+
 .see-more-link {
     text-align: center;
     margin-top: 1.5rem;
@@ -512,7 +586,7 @@ a:hover, .nav-link:hover, .see-more-btn:hover {
     background: #f7fafc;
 }
 
-.field-tag {
+/* .field-tag {
     display: inline-block;
     background: rgba(102, 126, 234, 0.1);
     color: #3366cc;
@@ -521,7 +595,7 @@ a:hover, .nav-link:hover, .see-more-btn:hover {
     font-size: 0.8rem;
     font-weight: 500;
     margin-right: 0.5rem;
-}
+} */
 
 /* ===== NEWS SECTION ===== */
 .scrollable-news {
@@ -648,7 +722,7 @@ a:hover, .nav-link:hover, .see-more-btn:hover {
 }
 
 .vt-content {
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
 }
 
 .vt-title {
@@ -661,7 +735,7 @@ a:hover, .nav-link:hover, .see-more-btn:hover {
 .vt-subtitle {
     color: #4a5568;
     font-weight: 500;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
 }
 
 .vt-content p {
