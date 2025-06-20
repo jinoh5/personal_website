@@ -103,69 +103,67 @@ document.getElementById('heroPhoto').addEventListener('click', function() {
     alert('Click here to upload your photo! Replace this placeholder with your actual photo.');
 });
 
-// JavaScript for Menu Toggle
-    
-// Mobile menu toggle functionality
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener("DOMContentLoaded", () => {
+  // Load nav.html and inject into page
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
 
-  // Toggle mobile menu
-  mobileMenuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      mobileMenuToggle.classList.toggle('active');
-  });
+      // === After nav is loaded ===
 
-  // Close mobile menu when clicking on a nav link
-  navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          mobileMenuToggle.classList.remove('active');
-          
-          // Update active link
-          navLinks.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-          
-          // Show corresponding page (if using single-page application)
-          const targetPage = link.getAttribute('data-page');
-          showPage(targetPage);
+      // Highlight the active nav link
+      const path = location.pathname.split("/").pop();
+      document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === path) {
+          link.classList.add("active");
+        }
       });
-  });
 
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-      if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          mobileMenuToggle.classList.remove('active');
-      }
-  });
+      // Menu toggle logic
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
 
-  // Function to show specific page (for single-page applications)
-  function showPage(pageId) {
-      // Hide all pages
-      document.querySelectorAll('.page').forEach(page => {
-          page.classList.remove('active');
+      // Toggle menu on click
+      mobileMenuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileMenuToggle.classList.toggle("active");
       });
-      
-      // Show target page
-      const targetPage = document.getElementById(pageId);
-      if (targetPage) {
-          targetPage.classList.add('active');
-      }
-  }
 
-  // Handle keyboard navigation
-  mobileMenuToggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+      // Close on link click and update active
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+
+          navLinks.forEach(l => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener("click", e => {
+        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+        }
+      });
+
+      // Keyboard: toggle on Enter or Space
+      mobileMenuToggle.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           mobileMenuToggle.click();
-      }
-  });
+        }
+      });
 
-  // Close menu on Escape key
-  document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          mobileMenuToggle.classList.remove('active');
-      }
-  });
+      // Close menu on Escape
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && navMenu.classList.contains("active")) {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.classList.remove("active");
+        }
+      });
+    });
+});
