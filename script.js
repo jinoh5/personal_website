@@ -104,27 +104,54 @@ document.getElementById('heroPhoto').addEventListener('click', function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+// document.addEventListener("DOMContentLoaded", function () {
+//   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+//   const navMenu = document.getElementById('nav-menu');
+//   const navLinks = document.querySelectorAll('.nav-link');
 
-  mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
+//   mobileMenuToggle.addEventListener('click', () => {
+//     navMenu.classList.toggle('active');
+//     mobileMenuToggle.classList.toggle('active');
+//   });
+
+//   navLinks.forEach(link => {
+//     link.addEventListener('click', () => {
+//       navMenu.classList.remove('active');
+//       mobileMenuToggle.classList.remove('active');
+//     });
+//   });
+
+//   document.addEventListener('click', (e) => {
+//     if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+//       navMenu.classList.remove('active');
+//       mobileMenuToggle.classList.remove('active');
+//     }
+//   });
+// });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const sidebarMenu = document.getElementById('sidebar-menu');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    sidebarMenu.classList.toggle('active');
   });
 
-  navLinks.forEach(link => {
+  // Close menu when clicking a link
+  sidebarMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      mobileMenuToggle.classList.remove('active');
+      sidebarMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
     });
   });
 
+  // Optional: Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-      navMenu.classList.remove('active');
-      mobileMenuToggle.classList.remove('active');
+    if (!sidebarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      sidebarMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
     }
   });
 });
