@@ -260,7 +260,7 @@
             <span>items per page</span>
           </div>
           <div class="results-info" id="resultsInfo">
-            Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> publications
+            Showing most recent <span id="showingCount">0</span> of <span id="totalCount">0</span> publications
           </div>
         </div>
 
@@ -494,7 +494,7 @@
         this.allPublications = Array.from(document.querySelectorAll('.publication-item'));
         this.filteredPublications = [...this.allPublications];
         this.currentPage = 1;
-        this.itemsPerPage = 20;
+        this.itemsPerPage = 10;
         
         this.selectedYears = new Set(['all']);
         this.selectedTypes = new Set(['all']);
