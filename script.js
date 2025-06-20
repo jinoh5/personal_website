@@ -103,67 +103,28 @@ document.getElementById('heroPhoto').addEventListener('click', function() {
     alert('Click here to upload your photo! Replace this placeholder with your actual photo.');
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Load nav.html and inject into page
-  fetch("nav.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
 
-      // === After nav is loaded ===
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-      // Highlight the active nav link
-      const path = location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("active");
-        }
-      });
+  mobileMenuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
+  });
 
-      // Menu toggle logic
-      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-      const navMenu = document.getElementById("nav-menu");
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      // Toggle menu on click
-      mobileMenuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        mobileMenuToggle.classList.toggle("active");
-      });
-
-      // Close on link click and update active
-      navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          mobileMenuToggle.classList.remove("active");
-
-          navLinks.forEach(l => l.classList.remove("active"));
-          link.classList.add("active");
-        });
-      });
-
-      // Close on outside click
-      document.addEventListener("click", e => {
-        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove("active");
-          mobileMenuToggle.classList.remove("active");
-        }
-      });
-
-      // Keyboard: toggle on Enter or Space
-      mobileMenuToggle.addEventListener("keydown", e => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          mobileMenuToggle.click();
-        }
-      });
-
-      // Close menu on Escape
-      document.addEventListener("keydown", e => {
-        if (e.key === "Escape" && navMenu.classList.contains("active")) {
-          navMenu.classList.remove("active");
-          mobileMenuToggle.classList.remove("active");
-        }
-      });
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
+    }
+  });
 });
