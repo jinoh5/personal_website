@@ -491,7 +491,7 @@
   
   .news-item {
     border-left: 4px solid var(--primary-color);
-    padding: 1rem;
+    padding: 0.25rem 1rem;
     margin-bottom: 1rem;
     background: var(--gradient-bg);
     border-radius: 0 8px 8px 0;
@@ -1081,5 +1081,19 @@
     .mobile-menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
+  }
+  
+  .site-footer {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+  }
+  
+  .site-footer p {
+    margin: 0.3rem 0;
   }
   
