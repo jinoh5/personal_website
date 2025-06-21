@@ -761,7 +761,7 @@
       left: 0;
       right: 0;
       height: calc(100vh - var(--header-height));
-      padding: 1rem 0.5rem;
+      padding: 2rem 1rem;
       box-shadow: var(--shadow-medium);
       z-index: 999;
       overflow-y: auto;
@@ -777,14 +777,14 @@
     
     .nav-link {
       display: block;
-      padding: 1rem 1.5rem;
+      padding: 0.25rem 0.5rem;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--text-primary);
       background: var(--bg-light);
-      border: 2px solid var(--border-color);
-      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
       transition: var(--transition);
       text-transform: uppercase;
       letter-spacing: 0.5px;
