@@ -161,7 +161,39 @@
       <div class="profile-section">
         <h3>Awards</h3>
         <p class="hero-description">
-          Awards
+
+    <!-- Honors & Awards Dropdown -->
+    <div class="dropdown-section">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        Honors & Awards <span class="dropdown-arrow">&#9654;</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="award-entry"><strong>Outstanding Graduate Student Instructor Award (April 2024)</strong> <span class="scholarship-sponsor">UC Berkeley (GSI Teaching and Resource Center</span></div>
+        <div class="award-entry"><strong>ICE-KSCE Master’s Thesis Award (July 2021)</strong> <span class="scholarship-sponsor">UK Institute of Civil Engineers & Korean Society of Civil Engineers</span></div>
+        <div class="award-entry"><strong>Best Student Paper Award at ISRS (May 2021)</strong> <span class="scholarship-sponsor">Korean Society of Remote Sensing and Gaia3D</span></div>
+        <div class="award-entry"><strong>Environmental Geospatial Data Idea Contest Excellence Award (Nov 2020)</strong> <span class="scholarship-sponsor">Ministry of Environment, South Korea</span></div>
+        <div class="award-entry"><strong>SPINS Lab Outstanding Research Award (Mar 2020)</strong> <span class="scholarship-sponsor">Seoul National University</span></div>
+        <div class="award-entry"><strong>Meteorological Satellite Student Competition Research Award (Jan 2019)</strong> <span class="scholarship-sponsor">Korean Meteorological Administration</span></div>
+      </div>
+    </div>
+
+    <!-- Scholarships Dropdown -->
+    <div class="dropdown-section">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        Scholarships <span class="dropdown-arrow">&#9654;</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="scholarship-entry"><strong>Beatrix C. Farrand Memorial Fellowship for Research (May 2024)</strong> <span class="scholarship-sponsor">UC Berkeley</span></div>
+        <div class="scholarship-entry"><strong>Beatrix C. Farrand Memorial Fellowship for Conference Travel (May 2023)</strong> <span class="scholarship-sponsor">UC Berkeley</span></div>
+        <div class="scholarship-entry"><strong>Robert N. Colwell Memorial Fellowship (Feb 2023)</strong> <span class="scholarship-sponsor">American Society of Photogrammetry and Remote Sensing (ASPRS)</span></div>
+        <div class="scholarship-entry"><strong>Brain Korea 21 Plus Scholarship (2019–2021)</strong> <span class="scholarship-sponsor">National Research Foundation (Korea)</span></div>
+        <div class="scholarship-entry"><strong>Merit-based Scholarship (2014–2017, 2019)</strong> <span class="scholarship-sponsor">Seoul National University</span></div>
+        <div class="scholarship-entry"><strong>National Scholarship for Science and Engineering (2013–2014)</strong> <span class="scholarship-sponsor">Korea Student Aid Foundation</span></div>
+        <div class="scholarship-entry"><strong>SNU Global Scholarship (2012–2013)</strong> <span class="scholarship-sponsor">Seoul National University</span></div>
+      </div>
+    </div>
+
+
         </p>
       </div>
       
@@ -170,5 +202,12 @@
 </main>
 
   <script src="script.js"></script>
+  <script>
+    function toggleDropdown(element) {
+      const section = element.parentElement;
+      section.classList.toggle('open');
+    }
+  </script>
+  
 </body>
 </html>
