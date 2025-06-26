@@ -131,3 +131,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = location.pathname.split('/').pop(); // get current filename
+    const navLinks = document.querySelectorAll('.nav-link');
+  
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage || (currentPage === '' && href.includes('index.html'))) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+  
