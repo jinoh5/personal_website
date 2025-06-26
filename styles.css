@@ -426,11 +426,13 @@
   
   .research-highlight img {
     width: 200px;
-    height: 150px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 6px;
     border: 1px solid var(--border-color);
+    max-height: 200px; /* Optional: restrict height if too tall */
   }
+  
   
   .research-content h3 {
     margin: 0 0 12px 0;
@@ -777,11 +779,12 @@
     }
     
     .research-highlight img {
-      width: 100%;
-      max-width: 400px;
-      height: 250px;
-      justify-self: center;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        object-fit: contain;
     }
+    
     
     .vertical-timeline {
       margin-left: 2rem;
@@ -900,6 +903,13 @@
       font-size: 0.9rem;
     }
     
+    .research-highlight img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+    }
+
     .research-table {
       font-size: 0.8rem;
     }
