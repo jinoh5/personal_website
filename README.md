@@ -1,7 +1,7 @@
 # Personal Website
 Welcome to the source code for my personal academic website, built to showcase my research, teaching, and professional activities.
 
-🌐 **Live site**: [https://minhokim.me](https://minho.me)
+🌐 **Live site**: [https://minho.me](https://minho.me)
 
 ---
 
