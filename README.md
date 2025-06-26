@@ -16,6 +16,7 @@ This website provides:
 ---
 
 ## 📁 Structure
+```
 ├── index.html # Home page
 ├── about.html # About Me section
 ├── research.html # Research and publications
@@ -26,7 +27,7 @@ This website provides:
 ├── images/ # Profile and project images
 ├── assets/ # Fonts, icons, or other media
 └── README.md # You're reading it!
-
+```
 
 ---
 
