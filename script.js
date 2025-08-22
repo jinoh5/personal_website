@@ -15,46 +15,46 @@ function typeWriter(text, element, speed = 100) {
   type();
 }
 
-// Initialize typewriter effect
-document.addEventListener("DOMContentLoaded", function () {
-  const typewriter = document.getElementById("typewriter");
-  if (typewriter) {
-      const words = [": Planner", ": Engineer", ": Data Scientist"];
-      let wordIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
+// // Initialize typewriter effect
+// document.addEventListener("DOMContentLoaded", function () {
+//   const typewriter = document.getElementById("typewriter");
+//   if (typewriter) {
+//       const words = [": Neuroscientist", ": AI Engineer", ": Data Scientist"];
+//       let wordIndex = 0;
+//       let charIndex = 0;
+//       let isDeleting = false;
   
-      function type() {
-          const currentWord = words[wordIndex];
+//       function type() {
+//           const currentWord = words[wordIndex];
           
-          if (isDeleting) {
-              charIndex--;
-              typewriter.textContent = currentWord.substring(0, charIndex);
+//           if (isDeleting) {
+//               charIndex--;
+//               typewriter.textContent = currentWord.substring(0, charIndex);
   
-              if (charIndex === 0) {
-                  isDeleting = false;
-                  wordIndex = (wordIndex + 1) % words.length;
-                  setTimeout(type, 500);
-              } else {
-                  setTimeout(type, 50);
-              }
-          } else {
-              charIndex++;
-              typewriter.textContent = currentWord.substring(0, charIndex);
+//               if (charIndex === 0) {
+//                   isDeleting = false;
+//                   wordIndex = (wordIndex + 1) % words.length;
+//                   setTimeout(type, 500);
+//               } else {
+//                   setTimeout(type, 50);
+//               }
+//           } else {
+//               charIndex++;
+//               typewriter.textContent = currentWord.substring(0, charIndex);
   
-              if (charIndex === currentWord.length) {
-                  setTimeout(() => {
-                      isDeleting = true;
-                      type();
-                  }, 2000);
-              } else {
-                  setTimeout(type, 100);
-              }
-          }
-      }
-      type();
-  }
-});
+//               if (charIndex === currentWord.length) {
+//                   setTimeout(() => {
+//                       isDeleting = true;
+//                       type();
+//                   }, 2000);
+//               } else {
+//                   setTimeout(type, 100);
+//               }
+//           }
+//       }
+//       type();
+//   }
+// });
 
 // Create floating particles
 function createParticle() {
