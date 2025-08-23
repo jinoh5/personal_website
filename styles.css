@@ -462,18 +462,22 @@
   }
   
   /* Tag colors */
-  .research-tag.cogneuro, .field-tag.cogneuro { background: #e74c3c; }
-  .research-tag.neuralcod, .field-tag.neuralcod { background: #27ae60; }
-  .research-tag.memory, .field-tag.memory { background: #9c66f2; }
-  .research-tag.rl, .field-tag.rl { background: #217c39; }
-  .research-tag.ml, .field-tag.ml { background: #599bff; }
-  .research-tag.nhp, .field-tag.nhp { background: #f1a2e2; }
-  .research-tag.mice, .field-tag.mice { background: #ffa94d; }
-  .research-tag.geometry, .field-tag.geometry { background: #bdfff8; color: #333; }
-  .research-tag.learning, .field-tag.learning { background: #217c39; }
-  .research-tag.paper, .field-tag.paper,
-  .research-tag.oral, .field-tag.oral,
-  .research-tag.poster, .field-tag.poster { background: #333; }
+  .research-tag.cogneuro, .field-tag.cogneuro { background: #C77DFF; } /* bright lavender */
+  .research-tag.learning, .field-tag.learning { background: #9D4EDD; } /* deep purple */
+  .research-tag.memory, .field-tag.memory { background: #7B2CBF; }     /* royal plum */
+
+  .research-tag.ml, .field-tag.ml { background: #00B4D8; }        /* vibrant cyan */
+  .research-tag.rl, .field-tag.rl { background: #0077B6; }        /* deep blue */
+  .research-tag.geometry, .field-tag.geometry { background: #90E0EF; color: #333; } /* soft aqua */
+  .research-tag.neuralcod, .field-tag.neuralcod { background: #023E8A; } /* navy blue */
+  .research-tag.neuropix, .field-tag.neuropix { background: #03045E; }  /* dark midnight blue */
+
+  .research-tag.mice, .field-tag.mice { background: #FFB347; } /* warm orange */
+  .research-tag.nhp, .field-tag.nhp { background: #A0522D; color: #fff; } /* saddle brown */
+
+  .research-tag.paper, .field-tag.paper { background: #222222; color: #fff; } /* darker gray */ 
+  .research-tag.oral, .field-tag.oral { background: #555555; }  /* medium gray */
+  .research-tag.poster, .field-tag.poster { background: #777777; } /* lighter gray */
   
   /* ===== NEWS SECTION ===== */
   .scrollable-news {
