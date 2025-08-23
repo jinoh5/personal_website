@@ -462,17 +462,18 @@
   }
   
   /* Tag colors */
-  .research-tag.wildfire, .field-tag.wildfire { background: #e74c3c; }
-  .research-tag.planning, .field-tag.planning { background: #27ae60; }
-  .research-tag.netsci, .field-tag.netsci { background: #9c66f2; }
+  .research-tag.cogneuro, .field-tag.cogneuro { background: #e74c3c; }
+  .research-tag.neuralcod, .field-tag.neuralcod { background: #27ae60; }
+  .research-tag.memory, .field-tag.memory { background: #9c66f2; }
+  .research-tag.rl, .field-tag.rl { background: #217c39; }
   .research-tag.ml, .field-tag.ml { background: #599bff; }
-  .research-tag.urban, .field-tag.urban { background: #f1a2e2; }
-  .research-tag.nathaz, .field-tag.nathaz { background: #ffa94d; }
-  .research-tag.geospatial, .field-tag.geospatial { background: #bdfff8; color: #333; }
-  .research-tag.rs, .field-tag.rs { background: #217c39; }
+  .research-tag.nhp, .field-tag.nhp { background: #f1a2e2; }
+  .research-tag.mice, .field-tag.mice { background: #ffa94d; }
+  .research-tag.geometry, .field-tag.geometry { background: #bdfff8; color: #333; }
+  .research-tag.learning, .field-tag.learning { background: #217c39; }
   .research-tag.paper, .field-tag.paper,
-  .research-tag.cpaper, .field-tag.cpaper,
-  .research-tag.ppaper, .field-tag.ppaper { background: #333; }
+  .research-tag.oral, .field-tag.oral,
+  .research-tag.poster, .field-tag.poster { background: #333; }
   
   /* ===== NEWS SECTION ===== */
   .scrollable-news {
